@@ -85,4 +85,5 @@ intervals_imputed <- df_imputed %>% group_by(interval, weekday) %>%
 
 ggplot(intervals_imputed, aes(x=interval, y=average_steps, group=weekday)) + 
       geom_line(aes(color=weekday)) + 
-      facet_wrap(~ weekday, nrow=2)
+      facet_wrap(~ weekday, nrow=2) +
+      ggtitle("Weekend v Weekday - Average Steps by Time Interval")

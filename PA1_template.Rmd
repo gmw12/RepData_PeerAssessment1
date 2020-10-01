@@ -76,7 +76,7 @@ The `r max_interval` 5 minute interval has the maximum number of steps (`r max_s
 total_na <- sapply(df, function(x) sum(is.na(x)))
 #duplicate dataframe
 df_imputed <- data.frame(df)
-#impute NA values with the mean of the interval
+#impute NA values with the mean of the interval across all time points
 for (i in 1:nrow(df_imputed)){
       if(is.na(df_imputed$steps[i])){
             na_interval <- df_imputed$interval[i]
@@ -116,8 +116,9 @@ intervals_imputed <- df_imputed %>% group_by(interval, weekday) %>%
 #create panel plot for weekday and weekend
 ggplot(intervals_imputed, aes(x=interval, y=average_steps, group=weekday)) + 
       geom_line(aes(color=weekday)) + 
-      facet_wrap(~ weekday, nrow=2)
+      facet_wrap(~ weekday, nrow=2) +
+      ggtitle("Weekend v Weekday - Average Steps by Time Interval")
 
 ```
 
-It appears that activity starts later on the weekend!
+It appears that activity starts later on the weekend with higher sustained activity!
