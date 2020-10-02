@@ -1,9 +1,7 @@
 ---
 title: "PA1_template.Rmd"
 author: "Greg Waitt"
-output: 
-  html_document:
-    keep_md: true
+output: pdf_document
 ---
 ---
 

@@ -1,12 +1,13 @@
 ---
 title: "PA1_template.Rmd"
 author: "Greg Waitt"
-output: 
-  html_document:
-    keep_md: true
+output: html_document
+keep_md: true
 ---
 ---
-
+```{r global_options}
+knitr::opts_chunk$set(fig.path='Figs/')
+```
 
 ## Loading and preprocessing the data
 ### Import data *.csv file and format date column
