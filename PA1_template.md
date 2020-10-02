@@ -1,10 +1,11 @@
 ---
 title: "PA1_template.Rmd"
 author: "Greg Waitt"
-output: pdf_document
+output: 
+      html_document:
+            keep_md: TRUE
 ---
 ---
-
 
 ## Loading and preprocessing the data
 ### Import data *.csv file and format date column
